@@ -16,17 +16,30 @@ class TeamMember(models.Model):
     def __str__(self):
         return self.fullname
 
-class recipt(models.Model):
+class Recipt(models.Model):
     rec_title=models.CharField(max_length=200)
     rec_desc=models.TextField()
-    rec_main_image=models.ImageField()
+    rec_main_image=models.ImageField(upload_to='receipts_handbook/models_files/main_images/',null=True)
+    rec_lil_image=models.ImageField(upload_to='receipts_handbook/models_files/main_images/',null=True)
     rec_ingredients=models.TextField()
     rec_receipt=models.TextField()
-
+    rec_category=models.CharField(max_length=200)
+    rec_cooktime=models.CharField(max_length=200)
+    rec_time_to_eat=models.CharField(max_length=200)
+    # Recipt nutrirional values
+    rec_calories=models.CharField(max_length=20)
+    rec_protein=models.CharField(max_length=20)
+    rec_fats=models.CharField(max_length=20)
+    rec_carbs=models.CharField(max_length=20)
     def publish(self):
         self.save()
 
     def __str__(self):
         return self.rec_title
 
+    def get_main_image_url(self):
+        return self.rec_main_image.url.replace('receipts_handbook/','')
+
+    def get_lil_image_url(self):
+        return self.rec_lil_image.url.replace('receipts_handbook/','')
 # Create your models here.

@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from .models import TeamMember
+from .models import TeamMember, Recipt
+
+def index(request):
+    return render(request,'receipts_handbook/index.html',{})
+
+
 def main_info(request):
     return render(request,'receipts_handbook/main_info.html',{})
 
