@@ -1,16 +1,78 @@
-
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #404040;
+    text-decoration: none;
+}
 body{
     width: 100%;
     background-color: #FFFFFF;
 }
 .main_block{
 
-    width: 97%;
-    margin: 15px auto;
+    width: 98.5%;
+    margin: 10px auto;
     background-color: #F0F7FF;
     border-radius: 5px;
 }
 .container{
-    width: 90%;
-    margin: 20px auto;
+    width: 94%;
+    margin: 10px auto;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.delicacy{
+    font-family: 'Arima Madurai', cursive;
+font-style: normal;
+font-weight: 800;
+font-size: 44.2419px;
+line-height: 72px;
+
+color: #404040;
+}
+.receipts{
+    font-family: 'Arima Madurai', cursive;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 44.2419px;
+    line-height: 72px;
+    
+    color: #404040;
+}
+.usr{
+    font-family: 'Arima Madurai', cursive;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 44.2419px;
+    line-height: 72px;
+    
+    color: #404040;
+}
+.main_cont{
+    width: 500px;
+    margin: 10px auto;
+}
+.main_head{
+    text-align: center;
+    font-family: 'Arima Madurai', cursive;
+    font-style: normal;
+}
+.main_text{
+        text-align: center;
+        font-family: 'Arima Madurai', cursive;
+        font-style: normal;
+    font-size: 20px;
+}
+.footer{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.foottxt{
+    font-family: 'Arima Madurai', cursive;
+    font-style: normal;
+font-size: 14px;
 }
