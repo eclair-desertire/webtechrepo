@@ -7,6 +7,9 @@ def index(request):
 def profile(request):
     return render(request,'receipts_handbook/profile.html',{})
 
+def receipts(request):
+    return render(request,'receipts_handbook/receipts.html',{})
+
 def main_info(request):
     return render(request,'receipts_handbook/main_info.html',{})
 
