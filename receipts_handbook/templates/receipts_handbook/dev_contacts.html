@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers contacts</title>
+</head>
+<body>
+    <h1>Our developers contacts</h1>
+    <h2>Head office address: Almaty, Makataeva 117A, office 423a</h2>
+    {% for member in members %}
+        <h2>{{ member.fullname }} - {{ member.position }} </h2>
+        <p>Phone: {{ member.phone_number }}</p>
+        <p>Email: {{ member.email }}</p>
+        <p>Office Hours: {{ member.office_hours }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
