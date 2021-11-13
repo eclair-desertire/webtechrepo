@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +11,106 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/receipts.css' %}">
-    <title>Receipts</title>
+    <title>Receipts TEST PAGE</title>
 </head>
 <body>
-    
+    <div class="main_block">
+        <div class="container">
+            <header class="header">
+                <div class="header_items">
+                    <a href="{% url 'index' %}" class="delicacy">
+                        Delicacy
+                    </a>
+                </div>
+                <div class="header_items">
+                    <a href="{% url 'receipts' %}" class="receipts">Receipts</a>
+                </div>
+                <div class="header_items">
+                    {% if not user.is_authenticated%}
+                <a href="{% url 'login' %}" class="usr">
+                    Login
+                </a>
+                {% else %}
+                <a href="{% url 'profile' %}" class="usr">Hello: {{ user.get_username }}</a>
+                {% endif %}
+                </div>
+            </header>
+        </div>
+        <div class="sndcontainer">
+            <div class="linkstocategories">
+                    <div class="cat_items">
+                        <a href="#" class="category">
+                            All
+                        </a>
+                    </div>
+                    <div class="cat_items">
+                        <a href="#" class="category">
+                            Chicken
+                        </a>
+                    </div>
+                    <div class="cat_items">
+                        <a href="#" class="category">
+                            Fish
+                        </a>
+                    </div>
+                    <div class="cat_items">
+                        <a href="#" class="category">
+                            Fruits
+                        </a>
+                    </div>
+                    <div class="cat_items">
+                        <a href="#" class="category">
+                            Pasta
+                        </a>
+                    </div>
+                    <div class="cat_items">
+                        <a href="#" class="category">
+                            Pakistani
+                        </a>
+                    </div>
+                    <div class="cat_items">
+                        <a href="#" class="category">
+                            Chinese
+                        </a>
+                    </div>
+            </div>
+
+            <div class="placeholderreceipt">
+                <!-- <div class="inner_receipt">
+                    <div class="inner_container">
+                        <h2 class="rtitle">Chicken Steak</h2>
+                        <p class="inner_text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, temporibus eaque neque eligendi, aliquid perferendis repudiandae recusandae perspiciatis nesciunt quod illum laboriosam accusamus unde vel dolores praesentium? Cum, quae numquam!
+                        </p>
+                    </div> 
+                </div> -->
+
+                <img src="{% static 'img/Dish.png' %}" alt="" class="image">
+            </div>
+            
+            <h2 class="inner_text">More recepies</h2>
+            <div class="more_receipts">
+                <div class="mrec">
+                    <img src="{% static 'img/spaghetti-1.png'%}" alt="" class="mrc">
+                </div>
+                <div class="mrec">
+                    <img src="{% static 'img/spaghetti-1.png'%}" alt="" class="mrc">
+                </div>
+                <div class="mrec">
+                    <img src="{% static 'img/spaghetti-1.png'%}" alt="" class="mrc">
+                </div>
+                <div class="mrec">
+                    <img src="{% static 'img/spaghetti-1.png'%}" alt="" class="mrc">
+                </div>
+                <div class="mrec">
+                    <img src="{% static 'img/spaghetti-1.png'%}" alt="" class="mrc">
+                </div>
+                <div class="mrec">
+                    <img src="{% static 'img/spaghetti-1.png'%}" alt="" class="mrc">
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

@@ -73,7 +73,8 @@ color: #404040;
     padding-top: 20px;
     width: 624px;
     height: 624px;
-
+    /* background-color: #fff; */
+    /* border-radius: 10px; */
 }
 .inner_receipt{
     padding-top: 5px;
@@ -85,15 +86,4 @@ color: #404040;
 .inner_container{
     width: 94%;
     margin: 0 auto;
-}
-.image{
-    width: 750px;
-
-}
-.more_receipts{
-    display: flex;
-    justify-content: space-between;
-}
-.mrc{
-    width: 120px;
 }

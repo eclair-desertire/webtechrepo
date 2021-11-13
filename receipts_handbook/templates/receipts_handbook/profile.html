@@ -15,11 +15,16 @@
     
 </head>
 <body>
-    {% if user.is_authenticated %}
-     <li>User: {{ user.get_username }}</li>
-     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+  <div class="main_block">
+    <div class="container">
+      {% if user.is_authenticated %}
+     <h2>User: {{ user.get_username }}</h2>
+     <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
    {% else %}
-     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+     <a href="{% url 'login'%}?next={{request.path}}">Login</a>
    {% endif %} 
+    </div>
+  </div>
+    
 </body>
 </html>
