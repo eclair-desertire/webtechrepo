@@ -22,9 +22,9 @@ def rec_new(request):
     if request.method == "POST":
         form = ReciptForm(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author=request.user
-            post.save()
+            recip = form.save(commit=False)
+            recip.author=request.user
+            recip.save()
             return render(request,'receipts_handbook/receipts.html',{})
     else:
         form = ReciptForm()

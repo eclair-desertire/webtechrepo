@@ -16,6 +16,17 @@ class TeamMember(models.Model):
     def __str__(self):
         return self.fullname
 
+
+class Categories(models.Model):
+    cat_id=models.IntegerField()
+    cat_name=models.CharField(max_length=50)
+    
+class Nutri_val(models.Model):
+    calories=models.FloatField()
+    carbons=models.FloatField()
+    fats=models.FloatField()
+    proteins=models.FloatField()
+
 class Recipt(models.Model):
     rec_title=models.CharField(max_length=200)
     rec_desc=models.TextField()
@@ -26,11 +37,13 @@ class Recipt(models.Model):
     rec_category=models.CharField(max_length=200)
     rec_cooktime=models.CharField(max_length=200)
     rec_time_to_eat=models.CharField(max_length=200)
+    rec_cat_id=models.ForeignKey(Categories, on_delete=models.CASCADE,default=0)
     # Recipt nutrirional values
     rec_calories=models.CharField(max_length=20)
     rec_protein=models.CharField(max_length=20)
     rec_fats=models.CharField(max_length=20)
     rec_carbs=models.CharField(max_length=20)
+    rec_nvals_id=models.ForeignKey(Nutri_val,on_delete=models.CASCADE,default=0)
     def publish(self):
         self.save()
 
@@ -42,4 +55,6 @@ class Recipt(models.Model):
 
     def get_lil_image_url(self):
         return self.rec_lil_image.url.replace('receipts_handbook/','')
+
+
 # Create your models here.
